@@ -1,7 +1,7 @@
 import React from "react";
 
-function Input() {
+function TodoItems() {
     return (<div></div>);
 }
 
-export default Input;
+export default TodoItems;

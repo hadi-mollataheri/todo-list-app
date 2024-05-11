@@ -5,6 +5,7 @@ import DeleteButton from './DeleteButton';
 function TodoList() {
   return (
     <div>
+      <h2>Todo List</h2>
       <TodoItems />
       <DeleteButton />
     </div>

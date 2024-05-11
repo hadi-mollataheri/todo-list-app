@@ -6,7 +6,7 @@ function Input({ userInput, setUserInput }) {
   };
   return (
     <div>
-      <label for='user-input'>New Item</label>
+      <label htmlFor='user-input'>New Item</label>
       <input
         id='user-input'
         onChange={handleInputChange}

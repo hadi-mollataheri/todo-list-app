@@ -2,11 +2,11 @@ import React from 'react';
 import TodoItems from './TodoItems';
 import DeleteButton from './DeleteButton';
 
-function TodoList() {
+function TodoList({todoItems}) {
   return (
     <div>
       <h2>Todo List</h2>
-      <TodoItems />
+      <TodoItems todoItems={todoItems} />
       <DeleteButton />
     </div>
   );

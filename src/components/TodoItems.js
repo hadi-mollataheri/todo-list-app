@@ -1,14 +1,16 @@
 import React from 'react';
 
-function TodoItems() {
-  return (
-    <div>
-      <label for='todo-checkbox'>
-        <input id='todo-checkbox' type='checkbox'></input>
-        some work
-      </label>
-    </div>
-  );
+function TodoItems({ todoItems }) {
+  return todoItems.map((item, index) => {
+    return (
+      <div key={index}>
+        <label htmlFor={`todo-checkbox-${index}`}>
+          <input id={`todo-checkbox-${index}`} type='checkbox'></input>
+          {item}
+        </label>
+      </div>
+    );
+  });
 }
 
 export default TodoItems;

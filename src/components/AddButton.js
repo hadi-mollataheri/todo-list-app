@@ -1,7 +1,9 @@
 import React from "react";
 
 function AddButton() {
-    return (<div></div>);
+    return (<div>
+        <button className='border border-black'>Add</button>
+    </div>);
 }
 
-export default AddButton;
+export default AddButton;   

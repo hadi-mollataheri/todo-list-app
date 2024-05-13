@@ -12,7 +12,7 @@ function App() {
         setUserInput={setUserInput}
         setTodoItems={setTodoItems}
       />
-      <TodoList todoItems={todoItems} />
+      <TodoList todoItems={todoItems} setTodoItems={setTodoItems} />
     </main>
   );
 }

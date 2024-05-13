@@ -8,6 +8,7 @@ function TodoItems({ todoItems }) {
           <input id={`todo-checkbox-${index}`} type='checkbox'></input>
           {item}
         </label>
+        <button>Delete</button>
       </div>
     );
   });

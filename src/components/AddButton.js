@@ -3,7 +3,7 @@ import React from 'react';
 function AddButton({ setTodoItems, userInput }) {
   const handleAddButtonClick = () => {
     setTodoItems((prevItems) =>
-      !prevItems.includes(userInput)
+      !prevItems.includes(userInput) && userInput
         ? [...prevItems, userInput]
         : [...prevItems]
     );

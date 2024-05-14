@@ -5,7 +5,7 @@ function TodoList({todoItems, setTodoItems}) {
   return (
     <div>
       <h2 className='font-bold'>Todo List</h2>
-      <TodoItems todoItems={todoItems} />
+      <TodoItems todoItems={todoItems} setTodoItems={setTodoItems} />
     </div>
   );
 }

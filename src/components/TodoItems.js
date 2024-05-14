@@ -1,6 +1,14 @@
 import React from 'react';
 
-function TodoItems({ todoItems }) {
+function TodoItems({ todoItems, setTodoItems }) {
+  const handleDeleteClick = (currentItem) => {
+    setTodoItems((prevItems) => {
+      return prevItems.filter((item) => {
+        return item !== currentItem;
+      });
+    });
+  };
+
   return todoItems.map((item, index) => {
     return (
       <div key={index}>
@@ -8,7 +16,12 @@ function TodoItems({ todoItems }) {
           <input id={`todo-checkbox-${index}`} type='checkbox'></input>
           {item}
         </label>
-        <button>Delete</button>
+        <button
+          onClick={() => handleDeleteClick(item)}
+          className='ml-3 border border-black text-sm px-1 text-red-500'
+        >
+          Delete
+        </button>
       </div>
     );
   });

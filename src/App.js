@@ -9,6 +9,9 @@ function App() {
   const [checkedItems, setCheckedItems] = useState(
     new Array(todoItems.length).fill(false)
   );
+            console.log(checkedItems);
+            console.log(checkedItems.length);
+
   return (
     <main className='App'>
       <NewItems

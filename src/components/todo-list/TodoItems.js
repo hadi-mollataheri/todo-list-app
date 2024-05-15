@@ -1,11 +1,22 @@
 import React from 'react';
 
 function TodoItems({ todoItems, setTodoItems, checkedItems, setCheckedItems }) {
+
   const handleDeleteClick = (currentItem) => {
     setTodoItems((prevItems) => {
       return prevItems.filter((item) => {
         return item !== currentItem;
       });
+    });
+    // Remove the element(boolean elem) in the checkedItems when delete button is clicked with
+    // checking if the current element in the todoItems is the same as the element that we clicked on
+    // Use the *index* argument of the filter() to check that checks if todo item at the index is not the same as the
+    // currentIndex that we are passing to the handleDeleteClick, if they are the same that means we clicked the delete button
+    // so the element at this *index* in checkedItems(the _) should be filter out too like the actual item we filtered out above it
+    setCheckedItems((prevCheckedItems) => {
+      return prevCheckedItems.filter(
+        (_, index) => todoItems[index] !== currentItem
+      );
     });
   };
   // When the checkboxes are checked

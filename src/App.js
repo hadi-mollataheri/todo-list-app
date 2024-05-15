@@ -5,6 +5,10 @@ import TodoList from './components/todo-list/TodoList';
 function App() {
   const [userInput, setUserInput] = useState('');
   const [todoItems, setTodoItems] = useState([]);
+  // Create a checkedItems array state for every todoItems elements with the initial value of false
+  const [checkedItems, setCheckedItems] = useState(
+    new Array(todoItems.length).fill(false)
+  );
   return (
     <main className='App'>
       <NewItems
@@ -12,7 +16,12 @@ function App() {
         setUserInput={setUserInput}
         setTodoItems={setTodoItems}
       />
-      <TodoList todoItems={todoItems} setTodoItems={setTodoItems} />
+      <TodoList
+        todoItems={todoItems}
+        setTodoItems={setTodoItems}
+        checkedItems={checkedItems}
+        setCheckedItems={setCheckedItems}
+      />
     </main>
   );
 }

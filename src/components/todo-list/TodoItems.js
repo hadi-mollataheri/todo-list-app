@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TodoItems({ todoItems, setTodoItems }) {
+function TodoItems({ todoItems, setTodoItems, checkedItems, setCheckedItems }) {
   const handleDeleteClick = (currentItem) => {
     setTodoItems((prevItems) => {
       return prevItems.filter((item) => {

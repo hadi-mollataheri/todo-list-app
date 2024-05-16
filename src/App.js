@@ -27,7 +27,7 @@ function App() {
   }, [checkedItems]);
 
   return (
-    <main className='App'>
+    <main className='text-white'>
       <NewItems
         userInput={userInput}
         setUserInput={setUserInput}

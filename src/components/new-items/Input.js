@@ -11,7 +11,7 @@ function Input({ userInput, setUserInput }) {
         id='user-input'
         onChange={handleInputChange}
         value={userInput}
-        className='border border-black block'
+        className='border border-black block text-black'
       ></input>
     </div>
   );

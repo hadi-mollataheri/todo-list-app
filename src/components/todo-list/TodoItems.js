@@ -13,9 +13,11 @@ function TodoItems({ todoItems, setTodoItems, checkedItems, setCheckedItems }) {
     // currentIndex that we are passing to the handleDeleteClick, if they are the same that means we clicked the delete button
     // so the element at this *index* in checkedItems(the _) should be filter out too like the actual item we filtered out above it
     setCheckedItems((prevCheckedItems) => {
-      return prevCheckedItems.filter(
+      const newCheckedItems = prevCheckedItems.filter(
         (_, index) => todoItems[index] !== currentItem
       );
+      localStorage.setItem('checkedItems', JSON.stringify(newCheckedItems));
+      return newCheckedItems;
     });
   };
   // When the checkboxes are checked

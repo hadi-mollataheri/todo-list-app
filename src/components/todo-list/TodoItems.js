@@ -1,7 +1,6 @@
 import React from 'react';
 
 function TodoItems({ todoItems, setTodoItems, checkedItems, setCheckedItems }) {
-
   const handleDeleteClick = (currentItem) => {
     setTodoItems((prevItems) => {
       return prevItems.filter((item) => {
@@ -31,7 +30,7 @@ function TodoItems({ todoItems, setTodoItems, checkedItems, setCheckedItems }) {
   };
   return todoItems.map((item, index) => {
     return (
-      <div key={index}>
+      <div key={item}>
         <label
           htmlFor={`todo-checkbox-${index}`}
           className={`${checkedItems[index] ? 'opacity-65' : 'opacity-100'}`}
@@ -39,6 +38,7 @@ function TodoItems({ todoItems, setTodoItems, checkedItems, setCheckedItems }) {
           <input
             id={`todo-checkbox-${index}`}
             type='checkbox'
+            checked={checkedItems[index]}
             onChange={() => handleCheckChange(index)}
           ></input>
           {item}

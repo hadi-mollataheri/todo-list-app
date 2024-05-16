@@ -4,17 +4,27 @@ import TodoList from './components/todo-list/TodoList';
 
 function App() {
   const [userInput, setUserInput] = useState('');
-            console.log(localStorage);
+
   const savedTodoItems = JSON.parse(localStorage.getItem('todoItems')) || [];
   const [todoItems, setTodoItems] = useState(savedTodoItems);
-  // Create a checkedItems array state for every todoItems elements with the initial value of false
-  const [checkedItems, setCheckedItems] = useState(
-    new Array(todoItems.length).fill(false)
-  );
+
+  const [checkedItems, setCheckedItems] = useState(new Array(todoItems.length).fill(false));
+  console.log(checkedItems);
 
   useEffect(() => {
     localStorage.setItem('todoItems', JSON.stringify(todoItems));
   }, [todoItems]);
+
+  useEffect(() => {
+    const savedCheckedItems = localStorage.getItem('checkedItems')
+      ? JSON.parse(localStorage.getItem('checkedItems'))
+      : new Array(todoItems.length).fill(false);
+    setCheckedItems(savedCheckedItems);
+  }, [todoItems]);
+
+  useEffect(() => {
+    localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
+  }, [checkedItems]);
 
   return (
     <main className='App'>

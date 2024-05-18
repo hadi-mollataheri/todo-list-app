@@ -11,7 +11,6 @@ function App() {
   const [checkedItems, setCheckedItems] = useState(
     new Array(todoItems.length).fill(false)
   );
-  console.log(checkedItems);
 
   useEffect(() => {
     localStorage.setItem('todoItems', JSON.stringify(todoItems));

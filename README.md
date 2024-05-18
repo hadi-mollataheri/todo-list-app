@@ -8,7 +8,7 @@ I embarked on this project as a series of practice exercises after dedicating a 
 
 Project number: 10
 
-[**You can see this web app in GitGub-Pages**](https://hadi-mollataheri.github.io/todo-list-app/)
+[**Click here to see this web app**](https://hadi-mollataheri.github.io/todo-list-app/)
 
 ---
 

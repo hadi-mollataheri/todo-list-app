@@ -8,7 +8,9 @@ function App() {
   const savedTodoItems = JSON.parse(localStorage.getItem('todoItems')) || [];
   const [todoItems, setTodoItems] = useState(savedTodoItems);
 
-  const [checkedItems, setCheckedItems] = useState(new Array(todoItems.length).fill(false));
+  const [checkedItems, setCheckedItems] = useState(
+    new Array(todoItems.length).fill(false)
+  );
   console.log(checkedItems);
 
   useEffect(() => {
@@ -27,18 +29,20 @@ function App() {
   }, [checkedItems]);
 
   return (
-    <main className='text-white'>
-      <NewItems
-        userInput={userInput}
-        setUserInput={setUserInput}
-        setTodoItems={setTodoItems}
-      />
-      <TodoList
-        todoItems={todoItems}
-        setTodoItems={setTodoItems}
-        checkedItems={checkedItems}
-        setCheckedItems={setCheckedItems}
-      />
+    <main className='text-white flex flex-col items-center min-h-80 w-full mt-7'>
+      <div id='app' className='w-full px-3'>
+        <NewItems
+          userInput={userInput}
+          setUserInput={setUserInput}
+          setTodoItems={setTodoItems}
+        />
+        <TodoList
+          todoItems={todoItems}
+          setTodoItems={setTodoItems}
+          checkedItems={checkedItems}
+          setCheckedItems={setCheckedItems}
+        />
+      </div>
     </main>
   );
 }

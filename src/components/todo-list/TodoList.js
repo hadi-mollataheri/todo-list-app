@@ -3,7 +3,7 @@ import TodoItems from './TodoItems';
 
 function TodoList({ todoItems, setTodoItems, checkedItems, setCheckedItems }) {
   return (
-    <div>
+    <div className='self-start my-5'>
       <h2 className='font-bold'>Todo List</h2>
       <TodoItems
         todoItems={todoItems}

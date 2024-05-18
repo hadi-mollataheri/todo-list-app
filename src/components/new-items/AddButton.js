@@ -19,7 +19,7 @@ function AddButton({ setTodoItems, userInput }) {
     });*/
   return (
     <div>
-      <button onClick={handleAddButtonClick} className='border border-black'>
+      <button onClick={handleAddButtonClick} className='flex justify-center items-center border border-sky-600 bg-sky-900/30 rounded mt-3 pt-1 pb-1.5 w-full h-full leading-none'>
         Add
       </button>
     </div>

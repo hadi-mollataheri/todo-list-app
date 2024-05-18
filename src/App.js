@@ -29,8 +29,8 @@ function App() {
   }, [checkedItems]);
 
   return (
-    <main className='text-white flex flex-col items-center min-h-80 w-full mt-7'>
-      <div id='app' className='w-full px-3'>
+    <main className='text-white min-h-80 mt-7 sm:flex sm:justify-center'>
+      <div id='app' className='w-full px-3 sm:w-auto'>
         <NewItems
           userInput={userInput}
           setUserInput={setUserInput}

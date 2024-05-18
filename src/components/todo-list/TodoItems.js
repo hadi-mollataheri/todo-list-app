@@ -31,34 +31,38 @@ function TodoItems({ todoItems, setTodoItems, checkedItems, setCheckedItems }) {
     });
   };
   return (
-    <div className='flex flex-col justify-center'>
-      {todoItems.map((item, index) => {
-        return (
-          <div key={item} className='mx-3'>
-            <label
-              htmlFor={`todo-checkbox-${index}`}
-              className={`${
-                checkedItems[index] ? 'opacity-65' : 'opacity-100'
-              }`}
-            >
-              <input
-                id={`todo-checkbox-${index}`}
-                type='checkbox'
-                checked={checkedItems[index]}
-                onChange={() => handleCheckChange(index)}
-                className='mb-4 mr-1'
-              ></input>
-              {item}
-            </label>
-            <button
-              onClick={() => handleDeleteClick(item)}
-              className='ml-3 border rounded-sm border-red-400 text-sm px-1 text-red-500 bg-red-400/10 h-full pb-1 pt-0.5 leading-none'
-            >
-              Delete
-            </button>
-          </div>
-        );
-      })}
+    <div className='flex flex-col justify-center sm:text-lg'>
+      {todoItems.length === 0 ? (
+        <p>Nothing todo</p>
+      ) : (
+        todoItems.map((item, index) => {
+          return (
+            <div key={item} className='mx-3 my-2 flex items-center'>
+              <label
+                htmlFor={`todo-checkbox-${index}`}
+                className={`${
+                  checkedItems[index] ? 'opacity-65' : 'opacity-100'
+                }`}
+              >
+                <input
+                  id={`todo-checkbox-${index}`}
+                  type='checkbox'
+                  checked={checkedItems[index]}
+                  onChange={() => handleCheckChange(index)}
+                  className='mr-1'
+                ></input>
+                {item}
+              </label>
+              <button
+                onClick={() => handleDeleteClick(item)}
+                className='ml-3 border rounded-sm border-red-400 text-sm px-1 text-red-500 bg-red-400/10 h-full pb-1 pt-0.5 leading-none sm:text sm:leading-normal'
+              >
+                Delete
+              </button>
+            </div>
+          );
+        })
+      )}
     </div>
   );
 }
